@@ -47,13 +47,13 @@ Let's say we need to check if there's a duplicate of the 0th element in an array
 
 ```
 function findDuplicate(arr):
-	zeroth_element = arr[0]
+  zeroth_element = arr[0]
 
-	iterate over arr:
-		if element == zeroth_element:
-			return true
+  iterate over arr:
+    if element == zeroth_element:
+      return true
 
-	return false
+  return false
 ```
 
 We need not concern ourselves with the time it takes to grab the 0th element or return true or false: those tasks always take the same amount of time, and therefore, are not the weakest link. The weakest link is the iteration over the array, which depends on the length of the array: it has the potential to take up the most time. If the array is one element long: great, it'll be super fast. But if it contains one million elements: that's going to take some time. Since the amount of time directly correlates with the length of the array (which we call n), Big O for this algorithm is O(n).
@@ -64,11 +64,11 @@ When calculating time complexity, we don't concern ourselves with coefficients (
 
 ```
 function find_lowest_and_highest(arr):
-	result = []
-	result << iterate and find minimum in arr
-	result << iterate and find maximum in arr
+  result = []
+  result << iterate and find minimum in arr
+  result << iterate and find maximum in arr
 
-	return result
+  return result
 ```
 
 This code actually has two weakest links: iterating to find the maximum value and iterating to find the minimum value. Both of those procedures have a time complexity of O(n), since the minimum or maximum values could be at the end of the array in the worst case. We could say that the time complexity of find_lowest_and_highest is 2O(n), since the weakest link runs twice. However, Big O simply does not care about that, so we drop the coefficients and declare that this function runs in O(n) time.
@@ -91,8 +91,8 @@ As an example, it doesn't matter if you're accessing the 2nd or 1,000th element 
 
 ```
 function find_by_index(arr, index):
-	print arr[index]
-	return arr[index]
+  print arr[index]
+  return arr[index]
 ```
 
 ### Linear Time: O(n)
@@ -105,8 +105,8 @@ Linear time is also good. The runtime for algorithms that run in O(n) time direc
 
 ```
 function say_hi_to_everyone(names):
-	iterate over names:
-		print "hi " + name
+  iterate over names:
+    print "hi " + name
 ```
 
 ### Quadratic Time: O(n<sup>2</sup>)
@@ -120,9 +120,9 @@ Quadratic time is not good. The runtime is defined as the square of the input's 
 
 ```
 function nested_loop_quadratic_time(arr):
-	iterate over arr:
-		iterate over arr:
-			perform some operation
+  iterate over arr:
+    iterate over arr:
+      perform some operation
 ```
 
 In the above example, the outer loop iterates over the entire input array. For each element in the input array, it then iterates over the entire array again. For an array of length 2, there are 2 _ 2 (or 4) operations, but for an array of length 10, there are 10 _ 10 (or 100) operations.
@@ -142,12 +142,12 @@ An example of an O(log n) algorithm is:
 
 ```
 function useless_log_n_loop(arr):
-	n = length of arr
+  n = length of arr
 
-	while n > 0:
-		print arr[n]
-		n = n / 2
-		round down n to nearest integer
+  while n > 0:
+    print arr[n]
+    n = n / 2
+    round down n to nearest integer
 ```
 
 ### Graph of Common Time Complexities
