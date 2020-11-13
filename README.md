@@ -49,7 +49,7 @@ Let's say we need to check if there's a duplicate of the 0th element in an array
 function findDuplicate(arr):
   zeroth_element = arr[0]
 
-  iterate over arr:
+  iterate over arr starting at index 1:
     if element == zeroth_element:
       return true
 
