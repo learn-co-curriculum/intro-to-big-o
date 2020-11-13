@@ -24,11 +24,11 @@ Let's say we have an unsorted array of elements and our function needs to find a
 
 ```
 function findElement(arr, target):
-	iterate over arr:
-		if element == target:
-			return true
+  iterate over arr:
+    if element == target:
+      return true
 
-	return false
+  return false
 ```
 
 We're interested in the worst case, which is when the element is not in the array. In that case we must iterate over the entire array before returning false. We can refer to the number of elements as n, which means Big O for this function is O(n). The time it takes to run directly relates to the array's length.
