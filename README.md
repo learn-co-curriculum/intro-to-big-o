@@ -125,7 +125,7 @@ function nested_loop_quadratic_time(arr):
       perform some operation
 ```
 
-In the above example, the outer loop iterates over the entire input array. For each element in the input array, it then iterates over the entire array again. For an array of length 2, there are 2 _ 2 (or 4) operations, but for an array of length 10, there are 10 _ 10 (or 100) operations.
+In the above example, the outer loop iterates over the entire input array. For each element in the input array, it then iterates over the entire array again. For an array of length 2, there are 2 \* 2 (or 4) operations, but for an array of length 10, there are 10 \* 10 (or 100) operations.
 
 ### Logarithmic Time: O(log n)
 
