@@ -167,7 +167,7 @@ function count(stop_count, count = 0):
   if count >= stop_count:
     return 'done'
 
-  count(stop_count, count + 1)
+  return count(stop_count, count + 1)
 ```
 
 For the above function the total number of frames added to the stack over time is directly proportional to the `stop_count`, so Big O is O(n). 
