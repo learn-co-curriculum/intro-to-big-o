@@ -56,7 +56,7 @@ function findDuplicate(arr):
   return false
 ```
 
-We need not concern ourselves with the time it takes to grab the 0th element or return true or false: those tasks always take the same amount of time, and therefore, are not the weakest link. The weakest link is the iteration over the array, which depends on the length of the array: it has the potential to take up the most time. If the array is one element long: great, it'll be super fast. But if it contains one million elements: that's going to take some time. Since the amount of time directly correlates with the length of the array (which we call n), Big O for this algorithm is O(n).
+We need not concern ourselves with the time it takes to grab the 0th element or return true or false - those tasks always take the same amount of time, and therefore, are not the weakest link. The weakest link is the iteration over the array, which depends on the length of the array, so it has the potential to take up the most time. If the array is one element long: great, it'll be super fast. But if it contains one million elements, that's going to take some time. Since the amount of time directly correlates with the length of the array (which we call n), Big O for this algorithm is O(n).
 
 ## Drop the Coefficients
 
@@ -97,7 +97,7 @@ function find_by_index(arr, index):
 
 ### Linear Time: O(n)
 
-Linear time is also good. The runtime for algorithms that run in O(n) time directly correlates with the size of the input. Earlier we mentioned that finding an item in an array takes O(n) time because the item could be at the very end or not in there at all, which means we must iterate over the length of the array in the worst case. Some examples of linear time procedures include:
+Linear time is also good. The runtime for algorithms that run in O(n) time is proportional to the size of the input, e.g. 1 x input size or 3 x input size. Earlier we mentioned that finding an item in an array takes O(n) time because the item could be at the very end or not in there at all, which means we must iterate over the length of the array in the worst case. Some examples of linear time procedures include:
 
 - Iterating over an array, e.g. to find a target value
 - Iterating over a string
@@ -111,7 +111,7 @@ function say_hi_to_everyone(names):
 
 ### Quadratic Time: O(n<sup>2</sup>)
 
-Quadratic time is not good. The runtime is defined as the square of the input's size. For example, if we had a quadratic time algorithm that took an array as an input: for an input of length 1, there would be 1 operation, but for an input of length 10, there would be 100 operations. Some examples of algorithms that take quadratic time include:
+Quadratic time is not good, but sometimes unavoidable. The runtime is defined as the square of the input's size. For example, if we had a quadratic time algorithm that took an array as an input: for an input of length 1, there would be 1 operation, but for an input of length 10, there would be 100 operations. Some examples of algorithms that take quadratic time include:
 
 - Bubble sort
 - Selection sort
@@ -129,7 +129,7 @@ In the above example, the outer loop iterates over the entire input array. For e
 
 ### Logarithmic Time: O(log n)
 
-Logarithmic time is fantastic! It's not quite as good as constant time, but it is better than linear time. If an algorithm runs in O(log n) time, time increases linearly while the input increases exponentially. Let's pretend we have some operation that takes 1 second to handle an input containing 10 elements. When the input has 100 elements, that operation will take 2 seconds, and 1,000 elements will take 3 seconds! That's fast!
+Logarithmic time is fantastic! It's not quite as good as constant time, but it is faster than linear time. If an algorithm runs in O(log n) time, time increases linearly while the input increases exponentially. Let's pretend we have some operation that takes 1 second to handle an input containing 10 elements. When the input has 100 elements, that operation will take 2 seconds, and 1,000 elements will take 3 seconds! That's fast!
 
 An algorithm may be logarithmic if:
 
@@ -157,6 +157,20 @@ function useless_log_n_loop(arr):
 ## Need to Know
 
 When we calculate Big O for a procedure, there are some runtimes we just need to know (or look up). For example, it's important to know the runtime for accessing an element in an array or accessing a value in a Hash (aka Object or Dictionary). Take some time to review this [resource](https://www.bigocheatsheet.com/) (bookmark it!), which includes the best, average, and worst case time complexity for common operations and algorithms. For now, the most important data structures to pay attention to are arrays and hash tables.
+
+## Note on Recursion
+
+When calculating Big O for recursive functions, we compare the total stack frames over time to the size of the input.
+
+```
+function count(stop_count, count = 0):
+  if count >= stop_count:
+    return 'done'
+
+  count(stop_count, count + 1)
+```
+
+For the above function the total number of frames added to the stack over time is directly proportional to the `stop_count`, so Big O is O(n). 
 
 ## Conclusion
 
