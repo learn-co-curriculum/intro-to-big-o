@@ -152,7 +152,7 @@ function useless_log_n_loop(arr):
 
 ### Graph of Common Time Complexities
 
-![Image of Big O Graph with Time vs Input](Big-O-graph.png)
+![Image of Big O Graph with Time vs Input](https://curriculum-content.s3.amazonaws.com/data-structures-and-algorithms/Big-O-graph.png)
 
 ## Need to Know
 
